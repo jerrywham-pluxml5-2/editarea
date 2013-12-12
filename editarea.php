@@ -38,14 +38,6 @@ class editarea extends plxPlugin {
 		echo "\t".'<script type="text/javascript" src="'.PLX_PLUGINS.'editarea/editarea/edit_area_full.js"></script>'."\n";
 		echo "\t".'<script type="text/javascript" >'."\n";
 		    echo "\t\t".'editAreaLoader.init({'."\n";
-		    echo "\t\t\t".'id : "id_chapo"        // textarea id'."\n";
-		    echo "\t\t\t".',syntax: "php"            // syntax to be uses for highgliting'."\n";
-		    echo "\t\t\t".',start_highlight: true        // to display with highlight mode on start-up'."\n";
-		    echo "\t\t\t".',language: "fr"'."\n";
-		    //echo "\t\t\t".',display: "later"'."\n";
-		    echo "\t\t\t".',toolbar:"syntax_selection, | ,search, go_to_line, fullscreen, |, undo, redo, |, select_font,|, change_smooth_selection, highlight, reset_highlight, word_wrap, |, help"'."\n";
-		    echo "\t\t".'});'."\n";
-			echo "\t\t".'editAreaLoader.init({'."\n";
 		    echo "\t\t\t".'id : "id_content"        // textarea id'."\n";
 		    echo "\t\t\t".',syntax: "php"            // syntax to be uses for highgliting'."\n";
 		    echo "\t\t\t".',start_highlight: true        // to display with highlight mode on start-up'."\n";
