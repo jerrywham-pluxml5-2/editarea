@@ -5,6 +5,6 @@
 	<version>1.1</version>
 	<date>11/12/2013</date>
 	<site>http://www.cdolivet.com/editarea/?page=editArea</site>
-	<description><![CDATA[EditArea, coloration syntaxique en javascript pour l'editeur de code source de pluxml.]]></description>
+	<description><![CDATA[EditArea, a free javascript editor for source code.]]></description>
 	<requirements></requirements>
 </document>
