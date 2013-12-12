@@ -3,10 +3,11 @@
  * Plugin editarea
  *
  * @package	PLX
- * @version	1.0
- * @date	18/07/2011
+ * @version	1.1
+ * @date	11/12/2011
  * @author	Stephane F.
  * @author	Maguire Cyril
+ * @contrib	Jules Vincent
  **/
 class editarea extends plxPlugin {
 
@@ -21,11 +22,10 @@ class editarea extends plxPlugin {
 
 		# Appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
-		# Déclarations des hooks
-		if (substr($_SERVER['REQUEST_URI'],strrpos($_SERVER['REQUEST_URI'],'/')) == '/parametres_edittpl.php'  || substr($_SERVER['REQUEST_URI'],strrpos($_SERVER['REQUEST_URI'],'/'),13) == '/statique.php') {
-			# Déclarations des hooks
-			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
-		}		
+		
+			# Déclarations des hooks (présent uniquement pour l'édition du code des pages)
+			$this->addHook('AdminSettingsEdittplTop', 'AdminTopEndHead');
+			
 	}
 
 	/**
@@ -38,6 +38,14 @@ class editarea extends plxPlugin {
 		echo "\t".'<script type="text/javascript" src="'.PLX_PLUGINS.'editarea/editarea/edit_area_full.js"></script>'."\n";
 		echo "\t".'<script type="text/javascript" >'."\n";
 		    echo "\t\t".'editAreaLoader.init({'."\n";
+		    echo "\t\t\t".'id : "id_chapo"        // textarea id'."\n";
+		    echo "\t\t\t".',syntax: "php"            // syntax to be uses for highgliting'."\n";
+		    echo "\t\t\t".',start_highlight: true        // to display with highlight mode on start-up'."\n";
+		    echo "\t\t\t".',language: "fr"'."\n";
+		    //echo "\t\t\t".',display: "later"'."\n";
+		    echo "\t\t\t".',toolbar:"syntax_selection, | ,search, go_to_line, fullscreen, |, undo, redo, |, select_font,|, change_smooth_selection, highlight, reset_highlight, word_wrap, |, help"'."\n";
+		    echo "\t\t".'});'."\n";
+			echo "\t\t".'editAreaLoader.init({'."\n";
 		    echo "\t\t\t".'id : "id_content"        // textarea id'."\n";
 		    echo "\t\t\t".',syntax: "php"            // syntax to be uses for highgliting'."\n";
 		    echo "\t\t\t".',start_highlight: true        // to display with highlight mode on start-up'."\n";
