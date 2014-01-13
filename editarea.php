@@ -3,10 +3,11 @@
  * Plugin editarea
  *
  * @package	PLX
- * @version	1.0
- * @date	18/07/2011
+ * @version	1.1
+ * @date	11/12/2011
  * @author	Stephane F.
  * @author	Maguire Cyril
+ * @contrib	Jules Vincent
  **/
 class editarea extends plxPlugin {
 
@@ -21,11 +22,10 @@ class editarea extends plxPlugin {
 
 		# Appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
-		# Déclarations des hooks
-		if (substr($_SERVER['REQUEST_URI'],strrpos($_SERVER['REQUEST_URI'],'/')) == '/parametres_edittpl.php'  || substr($_SERVER['REQUEST_URI'],strrpos($_SERVER['REQUEST_URI'],'/'),13) == '/statique.php') {
-			# Déclarations des hooks
-			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
-		}		
+		
+			# Déclarations des hooks (présent uniquement pour l'édition du code des pages)
+			$this->addHook('AdminSettingsEdittplTop', 'AdminTopEndHead');
+			
 	}
 
 	/**
